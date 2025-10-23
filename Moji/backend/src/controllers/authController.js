@@ -39,7 +39,7 @@ export const signUp = async (req, res) => {
     return res.sendStatus(204);
   } catch (error) {
     console.error("Lỗi khi gọi Sign Up", error);
-    return res.status(500).json({ message: "Lỗi hệ thống" });
+    return res.status(500).json({ message: "Lỗi hệ thống hi gọi Sign up" });
   }
 };
 
@@ -102,7 +102,27 @@ export const signIn = async (req, res) => {
     });
   } catch (error) {
     console.error("Lỗi khi gọi Sign In", error);
-    return res.status(500).json({ message: "Lỗi hệ thống" });
+    return res.status(500).json({ message: "Lỗi hệ thống hi gọi Sign in" });
+  }
+};
+
+export const signOut = async (req, res) => {
+  try {
+    // Lấy refresh token từ cookie
+    const token = req.cookies?.refreshToken;
+
+    if (token) {
+      // Xoá refresh token trong Session
+      await Session.deleteOne({ refreshToken: token });
+
+      // Xoá cookie
+      res.clearCookie("refreshToken");
+    }
+
+    return res.sendStatus(204);
+  } catch (error) {
+    console.error("Lỗi khi gọi Sign Out", error);
+    return res.status(500).json({ message: "Lỗi hệ thống khi gọi Sign out" });
   }
 };
 /*
