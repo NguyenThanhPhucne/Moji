@@ -301,7 +301,8 @@
 
   /* Message bounce in animation */
   .message-bounce {
-    animation: messageSlideIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    animation: messageSlideIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+      forwards;
   }
 
   @keyframes messageSlideIn {
