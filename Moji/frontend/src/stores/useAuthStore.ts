@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { toast } from "sonner";
-import { authService } from "../services/authService.ts";
+import { authService } from "@/services/authService";
 import type { AuthState } from "@/types/store";
 
 export const useAuthStore = create<AuthState>((set, get) => ({
