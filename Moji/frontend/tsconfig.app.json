@@ -7,10 +7,9 @@
     "module": "ESNext",
     "types": ["vite/client"],
     "skipLibCheck": true,
-    "moduleResolution": "Node", // ← safe fallback
+    "moduleResolution": "Node",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
-    "moduleDetection": "force",
     "noEmit": true,
     "jsx": "react-jsx",
 
